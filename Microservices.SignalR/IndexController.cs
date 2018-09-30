@@ -4,24 +4,10 @@ namespace Microservices.SignalR.Controllers
 {
     public class IndexController : Controller
     {
+        [Route("/")]
         public IActionResult Index()
         {
-            return View();
+            return Redirect("index.html");
         }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
     }
 }

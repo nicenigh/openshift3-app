@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "openshift3-app", "openshift3-app\openshift3-app.csproj", "{471E4CD7-61B4-43D3-AAAD-4A47DE4EA846}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "openshift3-app", "openshift3-app\openshift3-app.csproj", "{471E4CD7-61B4-43D3-AAAD-4A47DE4EA846}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microservices.SignalR", "Microservices.SignalR\Microservices.SignalR.csproj", "{38ACC36D-EED6-460C-A7C6-9FF640CAB3ED}"
 EndProject

@@ -28,7 +28,13 @@ namespace Microservices.SignalR
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            var wwwroot = "/opt/app-root/src/Microservices.SignalR/wwwroot";
+#if DEBUG
+            var wwwroot = Path.Combine(@"C:\Projects\openshift3-app\Microservices.SignalR", "wwwroot");
+#else
+            var wwwroot = Environment.GetEnvironmentVariable("wwwroot");
+            //var wwwroot = "/opt/app-root/src/Microservices.SignalR/wwwroot";
+#endif
+            Console.WriteLine($"Using wwwroot from: {wwwroot}");
             if (!Directory.Exists(wwwroot))
                 Directory.CreateDirectory(wwwroot);
             app.UseStaticFiles(
