@@ -15,7 +15,7 @@
         <input type="button" value="login" id="btnlogin" />
     </div>
     <div>
-        <select id="txtto"><option>to everyone</option></select>
+        <select id="txtto"><option value="">to everyone</option></select>
         <input type="button" value="refresh" id="btnrefresh" />
     </div>
     <div>
@@ -51,7 +51,7 @@
         function getUsers() {
             $.ajax("post", "/list", { token: token }, (r) => {
                 if (r.status == 1) {
-                    document.getElementById("txtto").innerHTML = "<option>to everyone</option>";
+                    document.getElementById("txtto").innerHTML = "<option value=''>to everyone</option>";
                     for (var i in r.list) {
                         document.getElementById("txtto").innerHTML += "<option value='" + r.list[i].token + "'>" + r.list[i].name + "</option>";
                     }
@@ -79,7 +79,7 @@
             var txt = document.getElementById("txtmsg").value;
             var to = document.getElementById("txtto").value;
             var data = {
-                receiver: to == "" ? [] : [to],
+                receiver: (to == null || to == "") ? [] : [to],
                 content: txt
             };
             connection.invoke("send", data).catch(function (err) {
@@ -166,7 +166,7 @@
         var $ = { ajax: ajax };
 
         connect();
-                        //})(document, window, signalR);
+                                //})(document, window, signalR);
     </script>
 </body>
 </html>
